@@ -235,5 +235,45 @@ function appendToDOM(type) {
     }
 }
 
+/*
+* 监听滚动条,滚动时收起顶栏和按钮
+* */
+$(window).scroll(function () {
 
+});
+
+$(window).scroll(function () {
+    var before = $(window).scrollTop();
+    var direction;
+    $(window).scroll(function () {
+        var after = $(window).scrollTop();
+        if (before > after) {
+            // console.log('上');
+            before = after;
+            direction="up"
+        }
+        if (before < after) {
+            // console.log('下');
+            before = after;
+            direction ="down"
+        }
+        if(direction==="up"){
+            $(".nav").css("top", 0);
+            $(".btnBox").css("bottom","3%");
+        }
+        if (direction==="down"){
+            if ($(document).scrollTop() > 100) {
+                $(".nav").css("top", "-60px");
+                $(".btnBox").css("bottom","-60px");
+
+            }
+            if ($(document).scrollTop() <= 100) {
+                $(".nav").css("top", 0);
+
+            }
+        }
+    });
+
+
+});
 

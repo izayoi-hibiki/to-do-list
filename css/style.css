@@ -4,6 +4,7 @@ body, ul, li {
 }
 body {
     background-color: #edf0f1;
+    padding-top: 60px;
 }
 .ban-select {
     -webkit-user-select: none;
@@ -15,11 +16,14 @@ li {
     list-style: none;
 }
 .nav {
+    z-index: 15;
+    position: fixed;
+    top: 0;
     background-color: rgb(37, 185, 154);
     width: 100%;
     height: 60px;
     box-shadow: 1px 1px 10px 3px #aeaeae;
-    position: relative;
+
     -moz--webkit-transition: .3s ease;
     -moz-transition: .3s ease;
     -ms-transition: .3s ease;
@@ -125,6 +129,11 @@ li {
     position: fixed;
     right: 5%;
     bottom: 3%;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 }
 .addNewBtn {
     cursor: pointer;
