@@ -95,6 +95,7 @@ $(document).ready(function () {
 
     okBtn.click(function (event) {//点击确认按钮时
         if (inputTitle.val()) {
+
             writeToTODOLocalStorage();
             inputTitle.val("");
             inputContent.val("");
@@ -139,10 +140,12 @@ function switchBtnStatus() {//切换添加按钮的状态,开关添加界面
         addBtn.css("transform", "rotate(45deg)");
         inputInterface.show(300);
         inputTitle.focus();
+        var timer=setInterval("typing()", 500);
     } else {
         okBtn.css("bottom", "5px");
         addBtn.css("transform", "rotate(0deg)");
         inputInterface.hide(300);
+        clearInterval(timer);
     }
 
 }
@@ -239,10 +242,6 @@ function appendToDOM(type) {
 * 监听滚动条,滚动时收起顶栏和按钮
 * */
 $(window).scroll(function () {
-
-});
-
-$(window).scroll(function () {
     var before = $(window).scrollTop();
     var direction;
     $(window).scroll(function () {
@@ -250,21 +249,21 @@ $(window).scroll(function () {
         if (before > after) {
             // console.log('上');
             before = after;
-            direction="up"
+            direction = "up"
         }
         if (before < after) {
             // console.log('下');
             before = after;
-            direction ="down"
+            direction = "down"
         }
-        if(direction==="up"){
+        if (direction === "up") {
             $(".nav").css("top", 0);
-            $(".btnBox").css("bottom","3%");
+            $(".btnBox").css("bottom", "3%");
         }
-        if (direction==="down"){
+        if (direction === "down") {
             if ($(document).scrollTop() > 100) {
                 $(".nav").css("top", "-60px");
-                $(".btnBox").css("bottom","-60px");
+                $(".btnBox").css("bottom", "-60px");
 
             }
             if ($(document).scrollTop() <= 100) {
@@ -277,3 +276,13 @@ $(window).scroll(function () {
 
 });
 
+
+
+function typing() {
+    var inputTitle=$("#inputTitle");
+    if (inputTitle.val()) {
+        $(".okBtn").css("background-color", "green");
+    } else {
+        $(".okBtn").css("background-color", "#bfbfbf");
+    }
+}
