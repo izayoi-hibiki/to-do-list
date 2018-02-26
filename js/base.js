@@ -61,11 +61,18 @@ $(document).ready(function () {
         if ($(".about").css("display") === "block") {
             if (e.target === $("#about")[0]) {
                 // $(".changeSkin").css("display", "block");
-                // console.log(e.target.value + "是e.target的值");
+                // console.log(e.target.value + "是e.target1的值");
             } else {
+                // console.log(e.target.value + "是e.target2的值");
                 $(".about").css("display", "none");
             }
         }
+        if ($(".sidebar").css("left") !== "-260px") {
+            switchSidebar();
+            // console.log(e.target.value + "是e.target3的值");
+
+        }
+
     });
     $(".changeSkin").on("click", ".colorBlock", function () {
         var color = $(this).css("background-color");
