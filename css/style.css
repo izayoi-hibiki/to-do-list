@@ -2,13 +2,16 @@ body, ul, li {
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: #edf0f1;
     padding-top: 60px;
 }
 
 /* 1.去除android a/button/input/div标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
-a,button,input,div{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+a, button, input, div {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
 
 .ban-select {
     -webkit-user-select: none;
@@ -16,9 +19,11 @@ a,button,input,div{-webkit-tap-highlight-color:rgba(255,0,0,0);}
     -ms-user-select: none;
     user-select: none;
 }
+
 li {
     list-style: none;
 }
+
 .nav {
     z-index: 15;
     position: fixed;
@@ -34,12 +39,14 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .nav-title {
     text-align: center;
     height: 60px;
     line-height: 60px;
     color: #ffffff;
 }
+
 .menuBtn {
     /*float: left;*/
     position: absolute;
@@ -56,11 +63,13 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .menuBtn:active {
     background-color: #d3d3d3;
     opacity: 0.3;
 
 }
+
 .line {
     background-color: #fff;
     height: 4px;
@@ -68,9 +77,11 @@ li {
     border-radius: 1px;
     opacity: 1;
 }
+
 .line:active {
     opacity: 1;
 }
+
 .sidebar {
     z-index: 9;
     width: 250px;
@@ -85,9 +96,11 @@ li {
     left: -260px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
+
 .sidebar ul {
     padding-top: 20px;
 }
+
 .sidebar li {
     width: 190px;
     height: 30px;
@@ -101,13 +114,16 @@ li {
     -o-transition: .3s;
     transition: .3s;
 }
+
 .sidebar li:hover {
     background-color: #eee;
 
 }
+
 .sidebar li:active {
     background-color: #d9d9d9;
 }
+
 .list {
     width: 90%;
     margin: auto;
@@ -116,6 +132,7 @@ li {
     font-weight: 200;
     font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
 }
+
 .list .list-item {
     /*width: 100%;*/
     background-color: #fff;
@@ -125,9 +142,11 @@ li {
     padding-bottom: 30px;
 
 }
+
 .list .list-item .content {
     margin-right: 75px;
 }
+
 .btnBox {
     z-index: 10;
     position: fixed;
@@ -139,6 +158,7 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .addNewBtn {
     cursor: pointer;
     z-index: 12;
@@ -158,6 +178,7 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .okBtn {
     cursor: pointer;
     z-index: 11;
@@ -188,21 +209,25 @@ li {
     -ms-user-select: none;
     user-select: none;
 }
+
 .list .list-item {
     position: relative;
 
 }
+
 .list .list-item .clear {
     position: absolute;
     top: 12px;
     right: 12px;
 
 }
+
 .list .list-item .finish {
     position: absolute;
     top: 12px;
     right: 52px;
 }
+
 .list .list-item svg {
     width: 28px;
     height: 28px;
@@ -210,6 +235,7 @@ li {
     fill: #c5c9ce;
     padding: 6px;
 }
+
 .inputNewItem {
     z-index: 9;
     width: 100%;
@@ -221,6 +247,7 @@ li {
     padding: 110px 5%;
 
 }
+
 #inputTitle {
     width: 90%;
     height: 70px;
@@ -231,6 +258,7 @@ li {
     /*margin: 110px 5% ;*/
 
 }
+
 #inputContent {
     width: 90%;
     height: 70px;
@@ -240,6 +268,7 @@ li {
     outline: none;
     /*margin: 110px 5% ;*/
 }
+
 .createdTime {
     height: 20px;
     /*width: 50px;*/
@@ -249,12 +278,14 @@ li {
     /*right: 13px;*/
     /*bottom: 2px;*/
 }
+
 .list-item i {
     height: 0;
     width: 0;
     overflow: hidden;
     display: none;
 }
+
 .changeSkin, .about {
     display: none;
     width: 80%;
@@ -275,6 +306,7 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .container {
     /*background-color: #6cf;*/
     width: 80%;
@@ -282,11 +314,13 @@ li {
     overflow: hidden;
     margin-bottom: 20px;
 }
+
 .container:after {
     content: "";
     display: block;
     clear: both;
 }
+
 .colorBlock {
     /*background-color: #2cdeaa;*/
     /*width: 10%;*/
@@ -302,27 +336,35 @@ li {
     -o-transition: .3s ease;
     transition: .3s ease;
 }
+
 .colorBlock:active {
     opacity: 0.3;
 }
+
 .red {
     background-color: #ff0000;
 }
+
 .blue {
     background-color: #2196F3;
 }
+
 .green {
     background-color: #25b99a;
 }
+
 .orange {
     background-color: #ff8214;
 }
+
 .gray {
     background-color: gray;
 }
+
 .rad, .blue, .gray, .green, .orange, .default {
     cursor: pointer;
 }
+
 .default {
     background-color: rgb(37, 185, 154);
 }

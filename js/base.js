@@ -98,6 +98,8 @@ $(document).ready(function () {
     var addBtn = $(".addNewBtn");
     addBtn.click(function (event) {//点击添加按钮时
         switchBtnStatus();
+        who = "todo";
+
     });
 
     okBtn.click(function (event) {//点击确认按钮时
