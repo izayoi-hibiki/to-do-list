@@ -6,6 +6,10 @@ body {
     background-color: #edf0f1;
     padding-top: 60px;
 }
+
+/* 1.去除android a/button/input/div标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
+a,button,input,div{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
 .ban-select {
     -webkit-user-select: none;
     -moz-user-select: none;

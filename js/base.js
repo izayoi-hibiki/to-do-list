@@ -1,10 +1,13 @@
-//localStorage初始化
+/********************
+ * localStorage初始化*
+ * ******************/
 if (localStorage.length === 0) {
     var foo = [];
     foo = JSON.stringify(foo);
     localStorage.setItem("todo", foo);
     localStorage.setItem("completed", foo);
 }
+
 var who = "todo";//当前是查看todo界面还是completed界面
 
 $(document).ready(function () {
@@ -18,7 +21,9 @@ $(document).ready(function () {
 
     inputInterface.hide();
 
-
+    /********
+     * 侧边栏*
+     * ******/
     $(".menuBtn").click(switchSidebar);//点击主菜单按钮,切换sidebar
     $(".sidebar ul").click(switchSidebar);//侧边栏,关闭sidebar
     function switchSidebar(event) {
@@ -32,7 +37,9 @@ $(document).ready(function () {
         }
     }
 
-
+    /************
+     * 已完成界面*
+     * *********/
     $("#completed").click(function () {//显示已完成的事项
         who = "completed";
         appendToDOM(who);
@@ -104,9 +111,11 @@ $(document).ready(function () {
         }
     });
 
-
+    /************************
+     * 为完成和删除按钮绑定事件*
+     * **********************/
     var list = $(".list");
-    list.on("click", ".clear", function () {//为完成和删除按钮绑定事件
+    list.on("click", ".clear", function () {
         /*****
          * 遇到的问题:
          * 绑定的事件只执行1次
@@ -129,8 +138,10 @@ $(document).ready(function () {
 
 });
 
-
-function switchBtnStatus() {//切换添加按钮的状态,开关添加界面
+/******************************
+ * 切换添加按钮的状态,开关添加界面*
+ * ****************************/
+function switchBtnStatus() {
     var inputInterface = $(".inputNewItem");
     var inputTitle = $("#inputTitle");
     var okBtn = $(".okBtn");
@@ -140,7 +151,7 @@ function switchBtnStatus() {//切换添加按钮的状态,开关添加界面
         addBtn.css("transform", "rotate(45deg)");
         inputInterface.show(300);
         inputTitle.focus();
-        var timer=setInterval("typing()", 500);
+        var timer = setInterval("typing()", 500);
     } else {
         okBtn.css("bottom", "5px");
         addBtn.css("transform", "rotate(0deg)");
@@ -150,11 +161,17 @@ function switchBtnStatus() {//切换添加按钮的状态,开关添加界面
 
 }
 
+/****************************************
+ * 显示键为completed的LocalStorage中的数据*
+ * *************************************/
 function showCompleted() {
     appendToDOM("completed");
 }
 
-function writeToTODOLocalStorage() {//获取标题,内容,时间,写入LocalStorage的todo类别中
+/**********************************************
+ * 获取标题,内容,时间,写入LocalStorage的todo类别中*
+ * ********************************************/
+function writeToTODOLocalStorage() {
     var TODOValue = {
         "title": "title",
         "content": "content",
@@ -178,7 +195,9 @@ function writeToTODOLocalStorage() {//获取标题,内容,时间,写入LocalStor
 
 }
 
-
+/************************************************************************
+ * 将键为todo的LocalStorage中第index个删除,存入键为completed的LocalStorage中*
+ * **********************************************************************/
 function writeToCompletedLocalStorage(index) {//将某个todo事项转为completed事项
     var completedValue = {
         "title": "title",
@@ -197,8 +216,10 @@ function writeToCompletedLocalStorage(index) {//将某个todo事项转为complet
     deleteLS(who, index);//从todo里删除
 }
 
-
-function deleteLS(type, index) {//从todo里删除
+/********************************************
+ * 功能:将键为type的LocalStorage中第index个删除*
+ * ******************************************/
+function deleteLS(type, index) {
     var TODOLocalStorage = [];
     TODOLocalStorage = JSON.parse(localStorage.getItem(type));//读取
     TODOLocalStorage.splice(index, 1);//删除
@@ -207,10 +228,10 @@ function deleteLS(type, index) {//从todo里删除
 }
 
 
-/****
- * 功能:将LocalStorage中的数据读取出来并写入DOM
- * 参数:"todo","completed",//"deleted"
- * ***/
+/********************************************
+ * 功能:将LocalStorage中的数据读取出来并写入DOM*
+ * 参数:type:"todo"/"completed"             *
+ * *****************************************/
 function appendToDOM(type) {
     var TODOLocalStorage = [];
     $(".list").empty();
@@ -238,9 +259,9 @@ function appendToDOM(type) {
     }
 }
 
-/*
-* 监听滚动条,滚动时收起顶栏和按钮
-* */
+/******************************
+ * 监听滚动条,滚动时收起顶栏和按钮*
+ * ****************************/
 $(window).scroll(function () {
     var before = $(window).scrollTop();
     var direction;
@@ -264,22 +285,20 @@ $(window).scroll(function () {
             if ($(document).scrollTop() > 100) {
                 $(".nav").css("top", "-60px");
                 $(".btnBox").css("bottom", "-60px");
-
             }
             if ($(document).scrollTop() <= 100) {
                 $(".nav").css("top", 0);
-
             }
         }
     });
-
-
 });
 
 
-
+/**********************************
+ * 检查标题框中是否有值,有则确认键变色*
+ * ********************************/
 function typing() {
-    var inputTitle=$("#inputTitle");
+    var inputTitle = $("#inputTitle");
     if (inputTitle.val()) {
         $(".okBtn").css("background-color", "green");
     } else {
