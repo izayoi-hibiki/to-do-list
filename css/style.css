@@ -149,6 +149,8 @@ li {
     min-height:20px;
     /**+height:100%;*/
     _height:20px;
+    max-width: 90%;
+    _height:90%;
 }
 
 .btnBox {
