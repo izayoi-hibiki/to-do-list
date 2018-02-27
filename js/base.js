@@ -38,15 +38,21 @@ $(document).ready(function () {
     }
 
     /************
-     * 已完成界面*
+     * 已完成按钮*
      * *********/
     $("#completed").click(function () {//显示已完成的事项
         who = "completed";
         appendToDOM(who);
+        $(".nav-title").html("已完成");
     });
+
+    /*************
+     * 待办事项按钮*
+     * ***********/
     $("#todo").click(function () {
         who = "todo";
         appendToDOM(who);
+        $(".nav-title").html("待办事项");
     });
 
     /*****************
