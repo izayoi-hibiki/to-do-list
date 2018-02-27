@@ -28,7 +28,7 @@ li {
     z-index: 15;
     position: fixed;
     top: 0;
-    background-color: rgb(37, 185, 154);
+    background-color: #25B99A;
     width: 100%;
     height: 60px;
     box-shadow: 1px 1px 10px 3px #aeaeae;
@@ -52,7 +52,7 @@ li {
     position: absolute;
     height: 40px;
     width: 44px;
-    /*background-color: rgb(37, 185, 154);*/
+    /*background-color: #25B99A;*/
     margin-top: 10px;
     margin-left: 5%;
     border-radius: 5px;
@@ -125,6 +125,7 @@ li {
 }
 
 .list {
+    word-wrap:break-word;
     width: 90%;
     margin: auto;
     /*background-color: #6cf;*/
@@ -145,6 +146,9 @@ li {
 
 .list .list-item .content {
     margin-right: 75px;
+    min-height:20px;
+    /**+height:100%;*/
+    _height:20px;
 }
 
 .btnBox {
@@ -366,5 +370,10 @@ li {
 }
 
 .default {
-    background-color: rgb(37, 185, 154);
+    background-color: #25B99A;
+}
+.list .list-item .title{
+    margin-right: 75px;
+    font-size: 20px;
+    font-weight: 300;
 }
