@@ -141,6 +141,7 @@ li {
     border-radius: 4px;
     padding: 2px 15px;
     padding-bottom: 30px;
+    min-height: 70px;
 
 }
 
@@ -221,17 +222,47 @@ li {
 
 }
 
-.list .list-item .clear {
+.list .list-item .clear-landscape {
     position: absolute;
     top: 12px;
     right: 12px;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 
 }
+.list .list-item .clear-portrait {
+    position: absolute;
+    top: 52px;
+    right: 12px;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 
-.list .list-item .finish {
+}
+.list .list-item .finish-landscape {
     position: absolute;
     top: 12px;
     right: 52px;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+}
+.list .list-item .finish-portrait {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 }
 
 .list .list-item svg {
@@ -278,11 +309,18 @@ li {
 .createdTime {
     height: 20px;
     /*width: 50px;*/
-    float: right;
-    font-size: 14px;
-    /*position: absolute;*/
+    /*font-size: 14px;*/
+    position: absolute;
+    right: 52px;
+    bottom: 11px;
     /*right: 13px;*/
     /*bottom: 2px;*/
+    font-size: 12px;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 }
 
 .list-item i {
@@ -375,6 +413,7 @@ li {
     background-color: #25B99A;
 }
 .list .list-item .title{
+    margin-top: 10px;
     margin-right: 75px;
     font-size: 20px;
     font-weight: 300;
