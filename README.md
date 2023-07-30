@@ -1,7 +1,7 @@
 # to-do-list
 基于jQuery 和 HTML5,参考https://github.com/kaeyleo/yoone-todo
 
-本项目地址: https://orwisdom.github.io/to-do-list/
+本项目地址: https://izayoi-hibiki.github.io/to-do-list/
 > 推荐使用Chrome或Firefox浏览器
 ## 功能特点
 1. 添加，删除，归类任务
